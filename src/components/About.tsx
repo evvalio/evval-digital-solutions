@@ -56,17 +56,6 @@ const About = () => {
               </p>
             </div>
 
-            <div className="mt-8">
-              <Button 
-                variant="brand" 
-                size="lg"
-                onClick={() => scrollToSection('contact')}
-                className="group"
-              >
-                Persönliches Gespräch vereinbaren
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </div>
           </div>
 
           {/* Quote Card */}
@@ -74,11 +63,8 @@ const About = () => {
             <Card className="gradient-hero shadow-hero border-0 max-w-lg">
               <CardContent className="p-6">
                 <blockquote className="text-white text-lg font-medium italic text-center">
-                  "Digitale Lösungen müssen den Menschen dienen, nicht umgekehrt."
+                  "Digitale Lösungen müssen den Menschen dienen, nicht umgekehrt." – Waldemar Schiller
                 </blockquote>
-                <footer className="text-white/80 mt-2 text-center">
-                  – Waldemar Schiller
-                </footer>
               </CardContent>
             </Card>
           </div>

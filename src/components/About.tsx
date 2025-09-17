@@ -58,16 +58,6 @@ const About = () => {
 
           </div>
 
-          {/* Quote Card */}
-          <div className="flex justify-center">
-            <Card className="gradient-hero shadow-hero border-0 max-w-lg">
-              <CardContent className="p-6">
-                <blockquote className="text-white text-lg font-medium italic text-center">
-                  "Digitale Lösungen müssen den Menschen dienen, nicht umgekehrt." – Waldemar Schiller
-                </blockquote>
-              </CardContent>
-            </Card>
-          </div>
         </div>
       </div>
     </section>

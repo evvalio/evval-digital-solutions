@@ -94,10 +94,9 @@ const Contact = () => {
                   </a>
                 </Button>
                 <Button 
-                  variant="outline" 
+                  variant="outline-white" 
                   size="lg"
                   asChild
-                  className="border-white text-white hover:bg-white hover:text-primary"
                 >
                   <a href="mailto:ws@evval.io">
                     <Mail className="mr-2 h-5 w-5" />

@@ -44,7 +44,7 @@ const Hero = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
-              variant="soft"
+              variant="brand" 
               size="xl"
               onClick={() => scrollToSection('contact')}
               className="group"
@@ -53,7 +53,7 @@ const Hero = () => {
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button 
-              variant="soft" 
+              variant="brand"
               size="xl"
               onClick={() => scrollToSection('services')}
             >

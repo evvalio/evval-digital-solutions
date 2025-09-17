@@ -20,7 +20,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <img src={logo} alt="it.evval.io" className="h-10 w-auto" />
+            <img src={logo} alt="it.evval.io" className="h-12 w-auto" />
           </div>
 
           {/* Desktop Navigation */}

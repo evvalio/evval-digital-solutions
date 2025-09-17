@@ -44,7 +44,7 @@ const Hero = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
-              variant="hero" 
+              variant="soft"
               size="xl"
               onClick={() => scrollToSection('contact')}
               className="group"

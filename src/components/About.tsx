@@ -69,28 +69,14 @@ const About = () => {
             </div>
           </div>
 
-          {/* Highlights Cards */}
-          <div className="space-y-6">
-            {highlights.map((highlight, index) => (
-              <Card key={index} className="gradient-card shadow-card border-0 hover:shadow-hero transition-smooth">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-brand-purple-light rounded-full flex items-center justify-center flex-shrink-0">
-                      {highlight.icon}
-                    </div>
-                    <p className="text-lg font-medium">{highlight.text}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-            
-            {/* Quote Card */}
-            <Card className="gradient-hero shadow-hero border-0">
+          {/* Quote Card */}
+          <div className="flex justify-center">
+            <Card className="gradient-hero shadow-hero border-0 max-w-lg">
               <CardContent className="p-6">
-                <blockquote className="text-white text-lg font-medium italic">
+                <blockquote className="text-white text-lg font-medium italic text-center">
                   "Digitale Lösungen müssen den Menschen dienen, nicht umgekehrt."
                 </blockquote>
-                <footer className="text-white/80 mt-2">
+                <footer className="text-white/80 mt-2 text-center">
                   – Waldemar Schiller
                 </footer>
               </CardContent>

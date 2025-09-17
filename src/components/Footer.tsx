@@ -90,7 +90,7 @@ const Footer = () => {
         <div className="border-t border-primary-foreground/20 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-primary-foreground/60 text-sm">
-              © 2024 it.evval.io - Alle Rechte vorbehalten
+              © 2025 it.evval.io - Alle Rechte vorbehalten
             </p>
             <div className="flex gap-6 text-sm">
               <button 

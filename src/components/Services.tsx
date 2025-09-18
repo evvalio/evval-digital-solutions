@@ -62,7 +62,7 @@ const Services = () => {
                 <div className="mx-auto mb-4 w-16 h-16 bg-brand-purple-light rounded-full flex items-center justify-center group-hover:scale-110 transition-smooth">
                   {service.icon}
                 </div>
-                <CardTitle className="text-xl mb-2">{service.title}</CardTitle>
+                <CardTitle className="text-lg mb-2">{service.title}</CardTitle>
                 <CardDescription className="text-muted-foreground font-medium text-center">
                   {service.subtitle}
                 </CardDescription>

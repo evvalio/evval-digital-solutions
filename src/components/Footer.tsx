@@ -21,6 +21,9 @@ const Footer = () => {
             <div className="flex items-center mb-4">
               <img src={logo} alt="it.evval.io" className="h-8 w-auto brightness-0 invert" />
             </div>
+            <div className="flex items-center mb-4">
+              <img src={logo} alt="it.evval.io" className="h-6 w-auto brightness-0 invert" />
+            </div>
             <p className="text-primary-foreground/80 leading-relaxed">
               Digitale Lösungen für echte Betriebe. 
               Persönliche Unterstützung für Ihre individuellen IT-Bedürfnisse.
@@ -99,11 +102,6 @@ const Footer = () => {
               >
                 Impressum
               </button>
-              <span className="text-primary-foreground/40">|</span>
-              <div className="flex items-center gap-2">
-                <img src={logo} alt="it.evval.io" className="h-4 w-auto brightness-0 invert" />
-                <span className="text-primary-foreground/60">it.evval.io</span>
-              </div>
             </div>
           </div>
         </div>

@@ -72,7 +72,7 @@ const Contact = () => {
 
         {/* CTA Section */}
         <div className="text-center">
-          <Card className="gradient-hero shadow-hero border-0 max-w-2xl mx-auto">
+          <Card className="bg-primary shadow-hero border-0 max-w-2xl mx-auto">
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold text-white mb-4">
                 Kostenlose Erstberatung

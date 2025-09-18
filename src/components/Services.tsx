@@ -63,7 +63,7 @@ const Services = () => {
                   {service.icon}
                 </div>
                 <CardTitle className="text-xl mb-2">{service.title}</CardTitle>
-                <CardDescription className="text-muted-foreground font-medium">
+                <CardDescription className="text-muted-foreground font-medium text-center">
                   {service.subtitle}
                 </CardDescription>
               </CardHeader>

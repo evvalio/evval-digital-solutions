@@ -21,9 +21,6 @@ const Footer = () => {
             <div className="flex items-center mb-4">
               <img src={logo} alt="it.evval.io" className="h-8 w-auto brightness-0 invert" />
             </div>
-            <div className="flex items-center mb-4">
-              <img src={logo} alt="it.evval.io" className="h-6 w-auto brightness-0 invert" />
-            </div>
             <p className="text-primary-foreground/80 leading-relaxed">
               Digitale Lösungen für echte Betriebe. 
               Persönliche Unterstützung für Ihre individuellen IT-Bedürfnisse.

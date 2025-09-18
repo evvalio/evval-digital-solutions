@@ -6,7 +6,7 @@ const Services = () => {
     {
       icon: <Server className="w-8 h-8 text-primary" />,
       title: "Digitale Grundlagen & Infrastruktur",
-      subtitle: "Ihr IT-Fundament zuverlässig und sicher",
+      subtitle: "Ihr IT-Fundament – zuverlässig, sicher und stabil für alle Anforderungen",
       features: [
         "Hosting für Websites & Anwendungen",
         "E-Mail-Systeme (inkl. Einrichtung & Migration)",

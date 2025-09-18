@@ -505,7 +505,6 @@
           <nav class="nav">
             <a href="#services" class="nav-link">Services</a>
             <a href="#about" class="nav-link">Über mich</a>
-            <a href="#contact" class="nav-link">Kontakt</a>
             <a href="#contact" class="btn btn-brand">Beratung anfragen</a>
           </nav>
         </div>
@@ -828,8 +827,9 @@
             </h2>
           </div>
 
-          <div style="max-width: 48rem; margin: 0 auto;">
-            <div class="service-card" style="margin-bottom: 2rem;">
+          <div style="max-width: 48rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2rem;">
+            <!-- Angaben gemäß § 5 TMG -->
+            <div class="service-card">
               <h3>Angaben gemäß § 5 TMG</h3>
               <p><strong>Waldemar Schiller</strong></p>
               <p>Römerstraße 11</p>
@@ -846,19 +846,73 @@
               </p>
             </div>
 
+            <!-- Umsatzsteuer-ID -->
+            <div class="service-card">
+              <h3>Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG</h3>
+              <p style="color: var(--muted-foreground);">Wird bei Bedarf nachgetragen</p>
+            </div>
+
+            <!-- Verantwortlich für den Inhalt -->
+            <div class="service-card">
+              <h3>Inhaltlich verantwortlich gemäß § 55 Abs. 2 RStV</h3>
+              <p>Waldemar Schiller, Adresse wie oben.</p>
+            </div>
+
+            <!-- Haftungsausschluss -->
             <div class="service-card">
               <h3>Haftungsausschluss</h3>
-              <h4 style="font-weight: 600; margin-bottom: 0.5rem;">Haftung für Inhalte:</h4>
-              <p style="color: var(--muted-foreground); margin-bottom: 1rem;">
-                Die Inhalte dieser Seite wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, 
-                Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden.
-              </p>
+              <div style="margin-bottom: 1.5rem;">
+                <h4 style="font-weight: 600; margin-bottom: 0.5rem;">Haftung für Inhalte:</h4>
+                <p style="color: var(--muted-foreground); line-height: 1.6;">
+                  Die Inhalte dieser Seite wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, 
+                  Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden. 
+                  Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten 
+                  nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als 
+                  Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde 
+                  Informationen zu überwachen.
+                </p>
+              </div>
               
-              <h4 style="font-weight: 600; margin-bottom: 0.5rem;">Urheberrecht & Bildquellen:</h4>
-              <p style="color: var(--muted-foreground);">
+              <div>
+                <h4 style="font-weight: 600; margin-bottom: 0.5rem;">Haftung für Links:</h4>
+                <p style="color: var(--muted-foreground); line-height: 1.6;">
+                  Unser Angebot enthält Links zu externen Websites Dritter. Auf deren Inhalte haben wir 
+                  keinen Einfluss. Deshalb übernehmen wir für diese fremden Inhalte auch keine Gewähr. 
+                  Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber 
+                  verantwortlich.
+                </p>
+              </div>
+            </div>
+
+            <!-- Urheberrecht -->
+            <div class="service-card">
+              <h3>Urheberrecht & Bildquellen</h3>
+              <p style="color: var(--muted-foreground); line-height: 1.6; margin-bottom: 1rem;">
                 Alle auf dieser Website verwendeten Inhalte, insbesondere Texte, Logos und Bilder, 
                 unterliegen dem Urheberrecht. Eine Verwendung außerhalb der gesetzlich zulässigen 
                 Fälle bedarf der ausdrücklichen Zustimmung.
+              </p>
+              <p style="color: var(--muted-foreground); line-height: 1.6;">
+                Einige visuelle Inhalte (z. B. Logo und Grafiken) wurden mit Unterstützung von 
+                generativer KI (z. B. OpenAI DALL·E) erstellt.
+              </p>
+            </div>
+
+            <!-- Online-Streitbeilegung -->
+            <div class="service-card">
+              <h3>Online-Streitbeilegung</h3>
+              <p style="color: var(--muted-foreground);">
+                Plattform der EU-Kommission zur Online-Streitbeilegung: 
+                <a 
+                  href="https://ec.europa.eu/consumers/odr/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  style="color: var(--primary); text-decoration: none;"
+                  onmouseover="this.style.textDecoration='underline'"
+                  onmouseout="this.style.textDecoration='none'"
+                >
+                  https://ec.europa.eu/consumers/odr/
+                </a>
               </p>
             </div>
           </div>

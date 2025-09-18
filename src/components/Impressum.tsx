@@ -36,10 +36,10 @@ const Impressum = () => {
           {/* Umsatzsteuer-ID */}
           <Card className="shadow-card">
             <CardHeader>
-              <CardTitle>Umsatzsteuer-Identifikationsnummer</CardTitle>
+              <CardTitle>Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG</CardTitle>
             </CardHeader>
             <CardContent>
-              <p>Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG</p>
+              <p className="text-muted-foreground">Wird bei Bedarf nachgetragen</p>
             </CardContent>
           </Card>
 

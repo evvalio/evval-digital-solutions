@@ -37,12 +37,6 @@ const Header = () => {
             >
               Über mich
             </button>
-            <button
-              onClick={() => scrollToSection('contact')}
-              className="text-foreground hover:text-primary transition-smooth"
-            >
-              Kontakt
-            </button>
             <Button variant="brand" size="sm">
               Beratung anfragen
             </Button>
@@ -75,12 +69,6 @@ const Header = () => {
                 className="block px-3 py-2 text-foreground hover:text-primary transition-smooth w-full text-left"
               >
                 Über mich
-              </button>
-              <button
-                onClick={() => scrollToSection('contact')}
-                className="block px-3 py-2 text-foreground hover:text-primary transition-smooth w-full text-left"
-              >
-                Kontakt
               </button>
               <div className="px-3 py-2">
                 <Button variant="brand" size="sm" className="w-full">

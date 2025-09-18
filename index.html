@@ -18,11 +18,850 @@
     <meta name="twitter:description" content="Persönliche IT-Unterstützung für Handwerksbetriebe, Vereine und kleine Unternehmen." />
     
     <link rel="canonical" href="https://it.evval.io" />
-    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="icon" href="./favicon.png" type="image/png">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              background: "hsl(0 0% 100%)",
+              foreground: "hsl(267 45% 15%)",
+              card: "hsl(0 0% 100%)",
+              "card-foreground": "hsl(267 45% 15%)",
+              popover: "hsl(0 0% 100%)",
+              "popover-foreground": "hsl(267 45% 15%)",
+              primary: "hsl(267 45% 43%)",
+              "primary-foreground": "hsl(0 0% 100%)",
+              secondary: "hsl(20 100% 94%)",
+              "secondary-foreground": "hsl(267 45% 25%)",
+              muted: "hsl(20 50% 96%)",
+              "muted-foreground": "hsl(267 25% 45%)",
+              accent: "hsl(267 35% 85%)",
+              "accent-foreground": "hsl(267 45% 25%)",
+              destructive: "hsl(0 84.2% 60.2%)",
+              "destructive-foreground": "hsl(0 0% 100%)",
+              border: "hsl(267 20% 90%)",
+              input: "hsl(267 20% 90%)",
+              ring: "hsl(267 45% 43%)",
+              "brand-purple": "hsl(267 45% 43%)",
+              "brand-pink": "hsl(20 100% 94%)",
+              "brand-purple-light": "hsl(267 35% 85%)",
+              "brand-purple-dark": "hsl(267 50% 35%)"
+            }
+          }
+        }
+      }
+    </script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+        line-height: 1.6;
+        font-feature-settings: "rlig" 1, "calt" 1;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .transition-smooth {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .gradient-text {
+        background: linear-gradient(135deg, hsl(267 45% 43%), hsl(267 50% 55%));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .gradient-hero {
+        background: linear-gradient(135deg, hsl(267 45% 43%) 0%, hsl(267 50% 55%) 50%, hsl(20 100% 94%) 100%);
+      }
+
+      .gradient-card {
+        background: linear-gradient(145deg, hsl(0 0% 100%), hsl(20 50% 98%));
+      }
+
+      .shadow-card {
+        box-shadow: 0 4px 20px hsl(267 45% 43% / 0.1);
+      }
+
+      .shadow-hero {
+        box-shadow: 0 10px 40px hsl(267 45% 43% / 0.2);
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        white-space: nowrap;
+        border-radius: 0.375rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 1px solid transparent;
+        cursor: pointer;
+        text-decoration: none;
+        outline: none;
+      }
+
+      .btn:focus-visible {
+        outline: 2px solid hsl(267 45% 43%);
+        outline-offset: 2px;
+      }
+
+      .btn-default {
+        height: 2.5rem;
+        padding: 0.5rem 1rem;
+        background-color: hsl(267 45% 43%);
+        color: hsl(0 0% 100%);
+      }
+
+      .btn-default:hover {
+        background-color: hsl(267 45% 38%);
+      }
+
+      .btn-brand {
+        background-color: hsl(267 45% 43%);
+        color: white;
+        box-shadow: 0 4px 20px hsl(267 45% 43% / 0.1);
+      }
+
+      .btn-brand:hover {
+        background-color: hsl(267 50% 35%);
+      }
+
+      .btn-ghost {
+        background-color: transparent;
+        color: hsl(267 45% 15%);
+      }
+
+      .btn-ghost:hover {
+        background-color: hsl(267 35% 85%);
+        color: hsl(267 45% 25%);
+      }
+
+      .btn-outline-white {
+        border: 1px solid white;
+        background-color: transparent;
+        color: white;
+      }
+
+      .btn-outline-white:hover {
+        background-color: white;
+        color: hsl(267 45% 43%);
+      }
+
+      .btn-sm {
+        height: 2.25rem;
+        padding: 0 0.75rem;
+        border-radius: 0.375rem;
+      }
+
+      .btn-lg {
+        height: 2.75rem;
+        padding: 0 2rem;
+        border-radius: 0.375rem;
+      }
+
+      .btn-xl {
+        height: 3.5rem;
+        padding: 0 2.5rem;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+      }
+
+      .btn-icon {
+        height: 2.5rem;
+        width: 2.5rem;
+      }
+
+      .card {
+        background: hsl(0 0% 100%);
+        border: 1px solid hsl(267 20% 90%);
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 20px hsl(267 45% 43% / 0.1);
+      }
+
+      .card-header {
+        padding: 1.5rem 1.5rem 0;
+      }
+
+      .card-content {
+        padding: 1.5rem;
+      }
+
+      .card-title {
+        font-size: 1.125rem;
+        font-weight: 600;
+        line-height: 1.5;
+        color: hsl(267 45% 15%);
+      }
+
+      .card-description {
+        font-size: 0.875rem;
+        color: hsl(267 25% 45%);
+      }
+
+      .icon {
+        width: 1.5rem;
+        height: 1.5rem;
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .icon-lg {
+        width: 2rem;
+        height: 2rem;
+      }
+
+      .mobile-menu {
+        display: none;
+      }
+
+      @media (max-width: 768px) {
+        .mobile-menu.active {
+          display: block;
+        }
+      }
+    </style>
   </head>
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+  <body class="bg-background text-foreground">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <!-- Logo -->
+          <div class="flex items-center">
+            <img src="./src/assets/logo-icon.png" alt="it.evval.io" class="h-16 w-auto">
+          </div>
+
+          <!-- Desktop Navigation -->
+          <nav class="hidden md:flex items-center space-x-8">
+            <a href="#services" class="text-foreground hover:text-primary transition-smooth">Services</a>
+            <a href="#about" class="text-foreground hover:text-primary transition-smooth">Über mich</a>
+            <a href="#contact" class="text-foreground hover:text-primary transition-smooth">Kontakt</a>
+            <a href="#contact" class="btn btn-brand btn-sm">Beratung anfragen</a>
+          </nav>
+
+          <!-- Mobile menu button -->
+          <div class="md:hidden">
+            <button class="btn btn-ghost btn-icon" onclick="toggleMobileMenu()">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="mobile-menu md:hidden">
+          <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-background border-t border-border">
+            <a href="#services" class="block px-3 py-2 text-foreground hover:text-primary transition-smooth">Services</a>
+            <a href="#about" class="block px-3 py-2 text-foreground hover:text-primary transition-smooth">Über mich</a>
+            <a href="#contact" class="block px-3 py-2 text-foreground hover:text-primary transition-smooth">Kontakt</a>
+            <div class="px-3 py-2">
+              <a href="#contact" class="btn btn-brand btn-sm w-full">Beratung anfragen</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+        <div class="container mx-auto max-w-6xl">
+          <div class="text-center">
+            <!-- Main headline -->
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+              <span class="gradient-text">Digitale Lösungen</span>
+              <br />
+              für echte Betriebe
+            </h1>
+            
+            <!-- Subheadline -->
+            <p class="text-xl sm:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+              Persönliche Unterstützung für Ihre individuellen IT-Bedürfnisse.
+            </p>
+
+            <!-- Key benefits -->
+            <div class="flex flex-wrap justify-center gap-6 mb-10">
+              <div class="flex items-center gap-2 text-muted-foreground">
+                <svg class="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span>Praxisnah & verständlich</span>
+              </div>
+              <div class="flex items-center gap-2 text-muted-foreground">
+                <svg class="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span>Seit 2008 in der IT</span>
+              </div>
+              <div class="flex items-center gap-2 text-muted-foreground">
+                <svg class="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span>Für kleine Betriebe</span>
+              </div>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="#contact" class="btn btn-brand btn-xl group">
+                Kostenlose Beratung
+                <svg class="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+              </a>
+              <a href="#services" class="btn btn-brand btn-xl">
+                Services entdecken
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section id="services" class="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
+        <div class="container mx-auto max-w-6xl">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+              Unsere <span class="gradient-text">Services</span>
+            </h2>
+            <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Von der Grundausstattung bis zur digitalen Transformation – 
+              wir begleiten Sie auf Ihrem Weg in die digitale Zukunft.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            <!-- Service 1 -->
+            <div class="card gradient-card shadow-card border-0 hover:shadow-hero transition-smooth group">
+              <div class="card-header text-center pb-4">
+                <div class="mx-auto mb-4 w-16 h-16 bg-brand-purple-light rounded-full flex items-center justify-center group-hover:scale-110 transition-smooth">
+                  <svg class="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2"/>
+                  </svg>
+                </div>
+                <div class="card-title text-xl mb-2">Digitale Grundlagen & Infrastruktur</div>
+                <div class="card-description text-muted-foreground font-medium">
+                  Ihr IT-Fundament zuverlässig und sicher
+                </div>
+              </div>
+              <div class="card-content">
+                <ul class="space-y-3">
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span class="text-sm leading-relaxed">Hosting für Websites & Anwendungen</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span class="text-sm leading-relaxed">E-Mail-Systeme (inkl. Einrichtung & Migration)</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span class="text-sm leading-relaxed">Hardware-Installationen & Netzwerktechnik</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span class="text-sm leading-relaxed">Wartung, Reparatur & Pflege</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span class="text-sm leading-relaxed">Datenhaltung & Sicherung (lokal oder in der Cloud)</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span class="text-sm leading-relaxed">App-Entwicklung</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="card gradient-card shadow-card border-0 hover:shadow-hero transition-smooth group">
+              <div class="card-header text-center pb-4">
+                <div class="mx-auto mb-4 w-16 h-16 bg-brand-purple-light rounded-full flex items-center justify-center group-hover:scale-110 transition-smooth">
+                  <svg class="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  </svg>
+                </div>
+                <div class="card-title text-xl mb-2">Systeme & Automatisierung</div>
+                <div class="card-description text-muted-foreground font-medium">
+                  Wir bringen Ordnung, Effizienz und Konnektivität Ihrer Systeme
+                </div>
+              </div>
+              <div class="card-content">
+                <ul class="space-y-3">
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span class="text-sm leading-relaxed">Integration bestehender Tools & Systeme</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span class="text-sm leading-relaxed">Prozessautomatisierung (z. B. Zeiterfassung, Rechnungsversand)</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span class="text-sm leading-relaxed">Benutzerverwaltung & Rechtekonzepte</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span class="text-sm leading-relaxed">Schnittstellen & Datenflüsse optimieren</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span class="text-sm leading-relaxed">Anpassung an Ihre bestehende Arbeitsweise</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="card gradient-card shadow-card border-0 hover:shadow-hero transition-smooth group">
+              <div class="card-header text-center pb-4">
+                <div class="mx-auto mb-4 w-16 h-16 bg-brand-purple-light rounded-full flex items-center justify-center group-hover:scale-110 transition-smooth">
+                  <svg class="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                  </svg>
+                </div>
+                <div class="card-title text-xl mb-2">Digital arbeiten & wachsen</div>
+                <div class="card-description text-muted-foreground font-medium">
+                  Modern und verständlich. Damit Sie wirklich digital arbeiten können
+                </div>
+              </div>
+              <div class="card-content">
+                <ul class="space-y-3">
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span class="text-sm leading-relaxed">Webseiten-Erstellung & Pflege (DSGVO-konform, mobilfähig)</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span class="text-sm leading-relaxed">Cloud-Arbeitsplätze & mobiles Arbeiten</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span class="text-sm leading-relaxed">IT-Problemlösungen (Support, Fehleranalyse)</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span class="text-sm leading-relaxed">Beratung für digitale Weiterentwicklung</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span class="text-sm leading-relaxed">Schulung & Einführung für Teams und Einzelpersonen</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="container mx-auto max-w-6xl">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+              Über <span class="gradient-text">mich</span>
+            </h2>
+          </div>
+
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Content -->
+            <div>
+              <div class="space-y-6 text-lg text-muted-foreground leading-relaxed">
+                <p>
+                  Ich bin seit <strong class="text-foreground">2008 in der IT tätig</strong> – 
+                  mit Erfahrung in der IT-Betreuung von Großunternehmen und der technischen 
+                  Leitung umfangreicher IT-Plattformen.
+                </p>
+                
+                <p>
+                  Von der ausgefallenen Maus bis zur Architektur komplexer Systeme: 
+                  <strong class="text-foreground"> Praxisnähe und Lösungskompetenz gehören für mich zusammen.</strong>
+                </p>
+                
+                <p>
+                  Mit <strong class="text-primary">it.evval.io</strong> mache ich dieses Wissen für 
+                  Handwerksbetriebe, Vereine und kleine Unternehmen zugänglich – 
+                  <strong class="text-foreground"> verständlich, pragmatisch und zuverlässig.</strong>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
+        <div class="container mx-auto max-w-6xl">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+              Kontakt <span class="gradient-text">aufnehmen</span>
+            </h2>
+            <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Haben Sie Fragen oder benötigen Sie Unterstützung? 
+              Ich bin gerne für Sie da und freue mich auf Ihre Nachricht.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <!-- Phone -->
+            <div class="card gradient-card shadow-card border-0 hover:shadow-hero transition-smooth group">
+              <div class="card-header text-center pb-4">
+                <div class="mx-auto mb-3 w-14 h-14 bg-brand-purple-light rounded-full flex items-center justify-center group-hover:scale-110 transition-smooth">
+                  <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                  </svg>
+                </div>
+                <div class="card-title text-lg">Telefon</div>
+              </div>
+              <div class="card-content text-center">
+                <a href="tel:+4916270026066" class="text-muted-foreground hover:text-primary transition-smooth font-medium">
+                  +49 162 7002606
+                </a>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="card gradient-card shadow-card border-0 hover:shadow-hero transition-smooth group">
+              <div class="card-header text-center pb-4">
+                <div class="mx-auto mb-3 w-14 h-14 bg-brand-purple-light rounded-full flex items-center justify-center group-hover:scale-110 transition-smooth">
+                  <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 7.89a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                  </svg>
+                </div>
+                <div class="card-title text-lg">E-Mail</div>
+              </div>
+              <div class="card-content text-center">
+                <a href="mailto:ws@evval.io" class="text-muted-foreground hover:text-primary transition-smooth font-medium">
+                  ws@evval.io
+                </a>
+              </div>
+            </div>
+
+            <!-- Address -->
+            <div class="card gradient-card shadow-card border-0 hover:shadow-hero transition-smooth group">
+              <div class="card-header text-center pb-4">
+                <div class="mx-auto mb-3 w-14 h-14 bg-brand-purple-light rounded-full flex items-center justify-center group-hover:scale-110 transition-smooth">
+                  <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  </svg>
+                </div>
+                <div class="card-title text-lg">Adresse</div>
+              </div>
+              <div class="card-content text-center">
+                <a href="https://maps.google.com/?q=Römerstraße+11,+53859+Niederkassel" target="_blank" rel="noopener noreferrer" class="text-muted-foreground hover:text-primary transition-smooth font-medium">
+                  Römerstraße 11, 53859 Niederkassel
+                </a>
+              </div>
+            </div>
+
+            <!-- Availability -->
+            <div class="card gradient-card shadow-card border-0 hover:shadow-hero transition-smooth group">
+              <div class="card-header text-center pb-4">
+                <div class="mx-auto mb-3 w-14 h-14 bg-brand-purple-light rounded-full flex items-center justify-center group-hover:scale-110 transition-smooth">
+                  <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                </div>
+                <div class="card-title text-lg">Verfügbarkeit</div>
+              </div>
+              <div class="card-content text-center">
+                <span class="text-muted-foreground font-medium">Mo-Fr 9:00-18:00 Uhr</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA Section -->
+          <div class="text-center">
+            <div class="card gradient-hero shadow-hero border-0 max-w-2xl mx-auto">
+              <div class="card-content p-8">
+                <h3 class="text-2xl font-bold text-white mb-4">
+                  Kostenlose Erstberatung
+                </h3>
+                <p class="text-white/90 mb-6 leading-relaxed">
+                  In einem unverbindlichen Gespräch besprechen wir Ihre IT-Herausforderungen 
+                  und finden gemeinsam die beste Lösung für Ihr Unternehmen.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                  <a href="tel:+4916270026066" class="btn btn-outline-white btn-lg">
+                    <svg class="mr-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                    </svg>
+                    Jetzt anrufen
+                  </a>
+                  <a href="mailto:ws@evval.io" class="btn btn-outline-white btn-lg">
+                    <svg class="mr-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 7.89a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                    E-Mail schreiben
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Impressum Section -->
+      <section id="impressum" class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="container mx-auto max-w-4xl">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+              <span class="gradient-text">Impressum</span>
+            </h2>
+          </div>
+
+          <div class="space-y-8">
+            <!-- Angaben gemäß § 5 TMG -->
+            <div class="card shadow-card">
+              <div class="card-header">
+                <div class="card-title">Angaben gemäß § 5 TMG</div>
+              </div>
+              <div class="card-content space-y-2">
+                <p><strong>Waldemar Schiller</strong></p>
+                <p>Römerstraße 11</p>
+                <p>53859 Niederkassel</p>
+                <p>Deutschland</p>
+                <p class="mt-4">
+                  <strong>Telefon:</strong> <a href="tel:+4916270026066" class="text-primary hover:underline">+49 162 7002606</a>
+                </p>
+                <p>
+                  <strong>E-Mail:</strong> <a href="mailto:ws@evval.io" class="text-primary hover:underline">ws@evval.io</a>
+                </p>
+                <p>
+                  <strong>Website:</strong> <span class="text-primary">it.evval.io</span>
+                </p>
+              </div>
+            </div>
+
+            <!-- Umsatzsteuer-ID -->
+            <div class="card shadow-card">
+              <div class="card-header">
+                <div class="card-title">Umsatzsteuer-Identifikationsnummer</div>
+              </div>
+              <div class="card-content">
+                <p>Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG</p>
+              </div>
+            </div>
+
+            <!-- Verantwortlich für den Inhalt -->
+            <div class="card shadow-card">
+              <div class="card-header">
+                <div class="card-title">Inhaltlich verantwortlich gemäß § 55 Abs. 2 RStV</div>
+              </div>
+              <div class="card-content">
+                <p>Waldemar Schiller, Adresse wie oben.</p>
+              </div>
+            </div>
+
+            <!-- Haftungsausschluss -->
+            <div class="card shadow-card">
+              <div class="card-header">
+                <div class="card-title">Haftungsausschluss</div>
+              </div>
+              <div class="card-content space-y-4">
+                <div>
+                  <h4 class="font-semibold mb-2">Haftung für Inhalte:</h4>
+                  <p class="text-muted-foreground leading-relaxed">
+                    Die Inhalte dieser Seite wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, 
+                    Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden. 
+                    Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten 
+                    nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als 
+                    Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde 
+                    Informationen zu überwachen.
+                  </p>
+                </div>
+
+                <div>
+                  <h4 class="font-semibold mb-2">Haftung für Links:</h4>
+                  <p class="text-muted-foreground leading-relaxed">
+                    Unser Angebot enthält Links zu externen Websites Dritter. Auf deren Inhalte haben wir 
+                    keinen Einfluss. Deshalb übernehmen wir für diese fremden Inhalte auch keine Gewähr. 
+                    Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber 
+                    verantwortlich.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Urheberrecht -->
+            <div class="card shadow-card">
+              <div class="card-header">
+                <div class="card-title">Urheberrecht & Bildquellen</div>
+              </div>
+              <div class="card-content space-y-4">
+                <p class="text-muted-foreground leading-relaxed">
+                  Alle auf dieser Website verwendeten Inhalte, insbesondere Texte, Logos und Bilder, 
+                  unterliegen dem Urheberrecht. Eine Verwendung außerhalb der gesetzlich zulässigen 
+                  Fälle bedarf der ausdrücklichen Zustimmung.
+                </p>
+                <p class="text-muted-foreground leading-relaxed">
+                  Einige visuelle Inhalte (z. B. Logo und Grafiken) wurden mit Unterstützung von 
+                  generativer KI (z. B. OpenAI DALL·E) erstellt.
+                </p>
+              </div>
+            </div>
+
+            <!-- Online-Streitbeilegung -->
+            <div class="card shadow-card">
+              <div class="card-header">
+                <div class="card-title">Online-Streitbeilegung</div>
+              </div>
+              <div class="card-content">
+                <p class="text-muted-foreground">
+                  Plattform der EU-Kommission zur Online-Streitbeilegung: 
+                  <a 
+                    href="https://ec.europa.eu/consumers/odr/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="text-primary hover:underline ml-1"
+                  >
+                    https://ec.europa.eu/consumers/odr/
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div class="md:col-span-2">
+            <div class="flex items-center mb-4">
+              <img src="./src/assets/logo-icon.png" alt="it.evval.io" class="h-12 w-auto mr-3">
+              <span class="text-xl font-bold">it.evval.io</span>
+            </div>
+            <p class="text-gray-400 mb-4 max-w-md">
+              Persönliche IT-Unterstützung für Handwerksbetriebe, Vereine und kleine Unternehmen. 
+              Praxisnah und verständlich.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Navigation</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="#" onclick="scrollToTop()" class="hover:text-white transition-smooth">Startseite</a></li>
+              <li><a href="#services" class="hover:text-white transition-smooth">Services</a></li>
+              <li><a href="#about" class="hover:text-white transition-smooth">Über mich</a></li>
+              <li><a href="#contact" class="hover:text-white transition-smooth">Kontakt</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Kontakt</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li>+49 162 7002606</li>
+              <li>ws@evval.io</li>
+              <li>Niederkassel, Deutschland</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <p class="text-gray-400 text-sm">
+            © 2024 it.evval.io - Alle Rechte vorbehalten
+          </p>
+          <div class="flex space-x-4 mt-4 md:mt-0">
+            <a href="#impressum" class="text-gray-400 hover:text-white text-sm transition-smooth">Impressum</a>
+            <a href="https://it.evval.io" class="text-gray-400 hover:text-white text-sm transition-smooth">it.evval.io</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function toggleMobileMenu() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('active');
+      }
+
+      function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+          // Close mobile menu if open
+          const mobileMenu = document.getElementById('mobile-menu');
+          if (mobileMenu.classList.contains('active')) {
+            mobileMenu.classList.remove('active');
+          }
+        });
+      });
+
+      // Close mobile menu when clicking outside
+      document.addEventListener('click', function(e) {
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuButton = document.querySelector('[onclick="toggleMobileMenu()"]');
+        if (!mobileMenu.contains(e.target) && !menuButton.contains(e.target)) {
+          mobileMenu.classList.remove('active');
+        }
+      });
+    </script>
   </body>
 </html>

@@ -296,6 +296,13 @@
         gap: 0.75rem;
         margin-bottom: 0.75rem;
         font-size: 0.875rem;
+        line-height: 1.5;
+      }
+      
+      .check-icon {
+        color: var(--primary);
+        margin-top: 0.25rem;
+        flex-shrink: 0;
       }
       
       /* About */
@@ -559,42 +566,164 @@
 
           <div class="services-grid">
             <div class="service-card">
-              <div class="service-icon">🖥️</div>
+              <div class="service-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="8" x="2" y="2" rx="2" ry="2"/>
+                  <rect width="20" height="8" x="2" y="14" rx="2" ry="2"/>
+                  <line x1="6" x2="6.01" y1="6" y2="6"/>
+                  <line x1="6" x2="6.01" y1="18" y2="18"/>
+                </svg>
+              </div>
               <h3>Digitale Grundlagen & Infrastruktur</h3>
               <p class="service-subtitle">Ihr IT-Fundament zuverlässig und sicher</p>
               <ul class="features-list">
-                <li><span class="check-icon">✓</span> Hosting für Websites & Anwendungen</li>
-                <li><span class="check-icon">✓</span> E-Mail-Systeme (inkl. Einrichtung & Migration)</li>
-                <li><span class="check-icon">✓</span> Hardware-Installationen & Netzwerktechnik</li>
-                <li><span class="check-icon">✓</span> Wartung, Reparatur & Pflege</li>
-                <li><span class="check-icon">✓</span> Datenhaltung & Sicherung (lokal oder in der Cloud)</li>
-                <li><span class="check-icon">✓</span> App-Entwicklung</li>
+                <li>
+                  <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22,4 12,14.01 9,11.01"/>
+                  </svg>
+                  <span>Hosting für Websites & Anwendungen</span>
+                </li>
+                <li>
+                  <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22,4 12,14.01 9,11.01"/>
+                  </svg>
+                  <span>E-Mail-Systeme (inkl. Einrichtung & Migration)</span>
+                </li>
+                <li>
+                  <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22,4 12,14.01 9,11.01"/>
+                  </svg>
+                  <span>Hardware-Installationen & Netzwerktechnik</span>
+                </li>
+                <li>
+                  <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22,4 12,14.01 9,11.01"/>
+                  </svg>
+                  <span>Wartung, Reparatur & Pflege</span>
+                </li>
+                <li>
+                  <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22,4 12,14.01 9,11.01"/>
+                  </svg>
+                  <span>Datenhaltung & Sicherung (lokal oder in der Cloud)</span>
+                </li>
+                <li>
+                  <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22,4 12,14.01 9,11.01"/>
+                  </svg>
+                  <span>App-Entwicklung</span>
+                </li>
               </ul>
             </div>
 
             <div class="service-card">
-              <div class="service-icon">⚙️</div>
+              <div class="service-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"/>
+                  <path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
+                  <path d="M12 2v2"/>
+                  <path d="M12 22v-2"/>
+                  <path d="m1.05 9 1.73 1"/>
+                  <path d="M21.22 9l-1.73 1"/>
+                  <path d="M8 12H6"/>
+                  <path d="M18 12h-2"/>
+                  <path d="m1.05 15 1.73-1"/>
+                  <path d="M21.22 15l-1.73-1"/>
+                </svg>
+              </div>
               <h3>Systeme & Automatisierung</h3>
               <p class="service-subtitle">Wir bringen Ordnung, Effizienz und Konnektivität Ihrer Systeme</p>
               <ul class="features-list">
-                <li><span class="check-icon">✓</span> Integration bestehender Tools & Systeme</li>
-                <li><span class="check-icon">✓</span> Prozessautomatisierung (z. B. Zeiterfassung, Rechnungsversand)</li>
-                <li><span class="check-icon">✓</span> Benutzerverwaltung & Rechtekonzepte</li>
-                <li><span class="check-icon">✓</span> Schnittstellen & Datenflüsse optimieren</li>
-                <li><span class="check-icon">✓</span> Anpassung an Ihre bestehende Arbeitsweise</li>
+                <li>
+                  <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22,4 12,14.01 9,11.01"/>
+                  </svg>
+                  <span>Integration bestehender Tools & Systeme</span>
+                </li>
+                <li>
+                  <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22,4 12,14.01 9,11.01"/>
+                  </svg>
+                  <span>Prozessautomatisierung (z. B. Zeiterfassung, Rechnungsversand)</span>
+                </li>
+                <li>
+                  <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22,4 12,14.01 9,11.01"/>
+                  </svg>
+                  <span>Benutzerverwaltung & Rechtekonzepte</span>
+                </li>
+                <li>
+                  <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22,4 12,14.01 9,11.01"/>
+                  </svg>
+                  <span>Schnittstellen & Datenflüsse optimieren</span>
+                </li>
+                <li>
+                  <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22,4 12,14.01 9,11.01"/>
+                  </svg>
+                  <span>Anpassung an Ihre bestehende Arbeitsweise</span>
+                </li>
               </ul>
             </div>
 
             <div class="service-card">
-              <div class="service-icon">💻</div>
+              <div class="service-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="16" height="10" x="2" y="3" rx="2" ry="2"/>
+                  <path d="m7 21 5-5 5 5"/>
+                  <path d="M12 13V3"/>
+                </svg>
+              </div>
               <h3>Digital arbeiten & wachsen</h3>
               <p class="service-subtitle">Modern und verständlich. Damit Sie wirklich digital arbeiten können</p>
               <ul class="features-list">
-                <li><span class="check-icon">✓</span> Webseiten-Erstellung & Pflege (DSGVO-konform, mobilfähig)</li>
-                <li><span class="check-icon">✓</span> Cloud-Arbeitsplätze & mobiles Arbeiten</li>
-                <li><span class="check-icon">✓</span> IT-Problemlösungen (Support, Fehleranalyse)</li>
-                <li><span class="check-icon">✓</span> Beratung für digitale Weiterentwicklung</li>
-                <li><span class="check-icon">✓</span> Schulung & Einführung für Teams und Einzelpersonen</li>
+                <li>
+                  <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22,4 12,14.01 9,11.01"/>
+                  </svg>
+                  <span>Webseiten-Erstellung & Pflege (DSGVO-konform, mobilfähig)</span>
+                </li>
+                <li>
+                  <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22,4 12,14.01 9,11.01"/>
+                  </svg>
+                  <span>Cloud-Arbeitsplätze & mobiles Arbeiten</span>
+                </li>
+                <li>
+                  <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22,4 12,14.01 9,11.01"/>
+                  </svg>
+                  <span>IT-Problemlösungen (Support, Fehleranalyse)</span>
+                </li>
+                <li>
+                  <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22,4 12,14.01 9,11.01"/>
+                  </svg>
+                  <span>Beratung für digitale Weiterentwicklung</span>
+                </li>
+                <li>
+                  <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22,4 12,14.01 9,11.01"/>
+                  </svg>
+                  <span>Schulung & Einführung für Teams und Einzelpersonen</span>
+                </li>
               </ul>
             </div>
           </div>

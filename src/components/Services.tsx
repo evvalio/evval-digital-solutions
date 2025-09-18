@@ -71,7 +71,7 @@ const Services = () => {
                 <ul className="space-y-3">
                   {service.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
                       <span className="text-sm leading-relaxed">{feature}</span>
                     </li>
                   ))}

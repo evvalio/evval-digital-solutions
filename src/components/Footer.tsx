@@ -100,9 +100,10 @@ const Footer = () => {
                 Impressum
               </button>
               <span className="text-primary-foreground/40">|</span>
-              <span className="text-primary-foreground/60">
-                Website: it.evval.io
-              </span>
+              <div className="flex items-center gap-2">
+                <img src={logo} alt="it.evval.io" className="h-4 w-auto brightness-0 invert" />
+                <span className="text-primary-foreground/60">it.evval.io</span>
+              </div>
             </div>
           </div>
         </div>

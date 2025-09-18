@@ -13,8 +13,8 @@ const Impressum = () => {
         <div className="space-y-8">
           {/* Angaben gemäß § 5 TMG */}
           <Card className="shadow-card">
-            <CardHeader>
-              <CardTitle>Angaben gemäß § 5 TMG</CardTitle>
+            <CardHeader className="text-left">
+              <CardTitle className="text-left">Angaben gemäß § 5 TMG</CardTitle>
             </CardHeader>
             <CardContent className="space-y-2">
               <p><strong>Waldemar Schiller</strong></p>
@@ -35,8 +35,8 @@ const Impressum = () => {
 
           {/* Umsatzsteuer-ID */}
           <Card className="shadow-card">
-            <CardHeader>
-              <CardTitle>Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG</CardTitle>
+            <CardHeader className="text-left">
+              <CardTitle className="text-left">Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">Wird bei Bedarf nachgetragen</p>
@@ -45,8 +45,8 @@ const Impressum = () => {
 
           {/* Verantwortlich für den Inhalt */}
           <Card className="shadow-card">
-            <CardHeader>
-              <CardTitle>Inhaltlich verantwortlich gemäß § 55 Abs. 2 RStV</CardTitle>
+            <CardHeader className="text-left">
+              <CardTitle className="text-left">Inhaltlich verantwortlich gemäß § 55 Abs. 2 RStV</CardTitle>
             </CardHeader>
             <CardContent>
               <p>Waldemar Schiller, Adresse wie oben.</p>
@@ -55,8 +55,8 @@ const Impressum = () => {
 
           {/* Haftungsausschluss */}
           <Card className="shadow-card">
-            <CardHeader>
-              <CardTitle>Haftungsausschluss</CardTitle>
+            <CardHeader className="text-left">
+              <CardTitle className="text-left">Haftungsausschluss</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div>
@@ -85,8 +85,8 @@ const Impressum = () => {
 
           {/* Urheberrecht */}
           <Card className="shadow-card">
-            <CardHeader>
-              <CardTitle>Urheberrecht & Bildquellen</CardTitle>
+            <CardHeader className="text-left">
+              <CardTitle className="text-left">Urheberrecht & Bildquellen</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-muted-foreground leading-relaxed">
@@ -103,8 +103,8 @@ const Impressum = () => {
 
           {/* Online-Streitbeilegung */}
           <Card className="shadow-card">
-            <CardHeader>
-              <CardTitle>Online-Streitbeilegung</CardTitle>
+            <CardHeader className="text-left">
+              <CardTitle className="text-left">Online-Streitbeilegung</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
